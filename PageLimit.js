@@ -24,12 +24,12 @@ function printJobHook(inputs, actions) {
     currentPage = null;
     lastTime1 = YYYY + "/" + MM + "/" + DD + "/" + hh + ":" + mm + ":" + ss;
   };
-  
   var mins = Math.trunc(elapsedTime / 60000);
   if (mins > maxMins) {
     actions.log.info("時間経過、リセット");
     currentPage = null;
     lastTime1 = YYYY + "/" + MM + "/" + DD + "/" + hh + ":" + mm + ":" + ss;
+    mins = 0;
   };
   
   if (currentPage == null) {
@@ -53,3 +53,7 @@ function printJobHook(inputs, actions) {
     'saveWhenCancelled': true
   });
 };
+
+
+
+​
